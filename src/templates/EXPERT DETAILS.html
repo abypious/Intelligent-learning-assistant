@@ -1,0 +1,52 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+
+<style>
+  th{
+  background-color:#F8C8DC;
+  }
+</style>
+<form id="form1" name="form1" method="post" action="addexperts#About">
+  <table width="455" height="242" border="5" class="table table-striped">
+    <tr>
+      <td colspan="7" scope="row"><b>EXPERT DETAILS </b></td>
+    </tr>
+    <tr>
+      <th width="60" scope="row">NAME</th>
+      <th width="115"><strong>EXPERIENCE</strong></th>
+      <th width="76"><strong>GENDER</strong></th>
+      <th width="49"><strong>PLACE</strong></th>
+      <th width="6"><strong>PHONE</strong></td>
+      <th width="6"><strong>EMAIL</strong></th>
+      <th width="97">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td height="103" scope="row">{{i[1]}}</td>
+      <td>{{i[2]}}</td>
+      <td>{{i[3]}}</td>
+      <td>{{i[4]}}</td>
+      <td>{{i[5]}}</td>
+      <td>{{i[6]}}&nbsp;</td>
+      <td><p><a href="editexpert?id={{i[7]}}#About">EDIT</a></p>
+      <p><a href="deleteexpert?id={{i[7]}}">DELETE</a></p></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="7" scope="row"><label>
+        <input type="submit" name="Submit" value="ADD NAME" class="btn btn-info" />
+
+      </label></td>
+    </tr>
+  </table>
+ </form>
+</body>
+{% endblock %}
+<!--</html>-->

@@ -1,0 +1,33 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'expertindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="1098" border="5" class="table table-striped">
+    <tr>
+      <th colspan="3" scope="col">MEDICAL REPORTS </th>
+    </tr>
+    <tr>
+      <td width="364">NAME</td>
+      <td width="374">REPORT</td>
+	  <td></td>
+    </tr>
+    {% for i in val %}
+  <tr>
+    <td height="23">{{i[4]}}</td>
+    <td>{{i[2]}}</td>
+    <td><a href="static/medicalreport/{{i[2]}}" class="btn btn-info">VIEW REPORT </a>
+        <a href="add_guidance?id={{i[0]}}#About" class="btn btn-info">GUIDANCE</a>
+        <p></p></td>
+  </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

@@ -1,0 +1,43 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'expertindex.html' %}
+{% block body %}
+<body>
+
+<style>
+  th{
+  background-color:#F8C8DC;
+  }
+</style>
+<form id="form1" name="form1" method="post" action="">
+  <table width="1097" border="5" class="table table-striped">
+    <tr>
+      <td colspan="5" scope="col"><em>INTERACTION</em></td>
+    </tr>
+    <tr>
+      <th width="197">NAME</th>
+      <th width="209">PLACE</th>
+      <th width="260">GENDER</th>
+      <th width="276">NUMBER</th>
+      <th width="121">&nbsp;</th>
+    </tr>
+
+{% for i in val %}
+
+    <tr>
+      <td>{{i[1]}}</td>
+      <td>{{i[3]}}</td>
+      <td>{{i[4]}}</td>
+      <td>{{i[5]}}</td>
+      <td><a href="type_view?id={{i[0]}}&nm={{i[1]}}" class="btn btn-info">CHECK TYPE</a></td>
+    </tr>
+{% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

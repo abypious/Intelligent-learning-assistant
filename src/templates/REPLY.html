@@ -1,0 +1,23 @@
+{% extends 'expertindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="sendreply">
+  <table width="599" border="0" class="table">
+    <tr>
+      <th colspan="2" scope="col">REPLY</th>
+    </tr>
+    <tr>
+      <td>REPLY</td>
+      <td><label>
+        <textarea name="textarea"></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+        <input type="submit" name="Submit" value="Submit" />
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{%endblock%}

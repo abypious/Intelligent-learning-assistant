@@ -1,0 +1,39 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'expertindex.html' %}
+{% block body %}
+<body>
+<style>
+  th{
+  background-color:#F8C8DC;
+  }
+</style>
+<form id="form1" name="form1" method="post" action="addtips">
+  <div align="center">
+    <table width="708" height="284" border="5" class="table table-striped">
+      <tr>
+        <td colspan="3" scope="row"><b>FEEDBACK</b></td>
+      </tr>
+      <tr>
+        <th scope="row">Tips</th>
+
+
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td width="172" scope="row">{{i[1]}}</td>
+
+        <td width="323"><a href="/remove?id={{i[0]}}">remove</a></td>
+      </tr>
+      {% endfor %}
+      </table>
+    <p><input type="submit" value="add"></p>
+  </div>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

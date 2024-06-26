@@ -1,0 +1,59 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'expertindex.html' %}
+{% block body %}
+<body>
+<form action="addmaterials" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="479" border="5" class="table table-striped">
+
+    <tr>
+      <td width="197">MATERIAL_TYPE </td>
+      <td width="266"><label>
+        <select name="select">
+          <option>video</option>
+          <option>audio</option>
+          <option>text</option>
+
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td>MATERIAL INFO </td>
+      <td><label>
+        <input type="file" name="file" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+      <input type="submit" name="Submit" value="Submit" class="btn btn-info" />
+</label></td>
+    </tr>
+  </table>
+
+</form>
+
+
+    <table width="708" height="284" border="5" class="table table-striped">
+      <tr>
+      <th>date</th>
+      <th>type</th>
+      <th>material</th>
+      </tr>
+      {% for i in val1 %}
+      <tr>
+        <td width="172" scope="row">{{i[2]}}</td>
+        <td width="172" scope="row">{{i[4]}}</td>
+        <td width="172" scope="row"><a href="/static/materials/{{i[1]}}">{{i[1]}}</a> </td>
+
+        <td width="323"><a href="/removes?id={{i[0]}}">remove</a></td>
+      </tr>
+      {% endfor %}
+      </table>
+
+</body>
+{% endblock %}
+<!--</html>-->

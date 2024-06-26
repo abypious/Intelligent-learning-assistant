@@ -1,0 +1,68 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--<style type="text/css">-->
+<!--&lt;!&ndash;-->
+<!--.style1 {font-size: 9px}-->
+<!--&ndash;&gt;-->
+<!--</style>-->
+<!--</head>-->
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/updateexperts">
+  <table width="269" height="406" border="5" class="table table-striped">
+    <tr>
+      <th scope="row">NAME</th>
+      <td><label>
+        <input type="text" name="textfield" value="{{val[1]}}" required pattern="[A-Z a-z.]{3,25}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">EXPERIENCE</th>
+      <td><label>
+      <input type="text" name="textfield2" value="{{val[2]}}"required/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">GENDER</th>
+      <td><label>
+        <input name="radiobutton" type="radio" value="male" {% if val[3]=="male" %}checked{% endif %} />
+      MALE
+      <br />
+      <input name="radiobutton" type="radio" value="female"{% if val[3]=="female" %}checked{% endif %} />
+      FEMALE<br />
+      <input name="radiobutton" type="radio" value="other" {% if val[3]=="other" %}checked{% endif %} />
+      OTHER</label></td>
+    </tr>
+    <tr>
+      <th scope="row">PLACE</th>
+      <td><label>
+        <input type="text" name="textfield3" value="{{val[4]}}" required pattern="[A-Z a-z.]{3,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">PHONE</th>
+      <td><label>
+        <input type="text" name="textfield4" value="{{val[5]}}" required pattern="[6789][0-9]{9}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">EMAIL</th>
+      <td><label>
+        <input type="text" name="textfield5" value="{{val[6]}}" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" />
+      </label></td>
+    </tr>
+
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" VALUE="update" class="btn btn-info" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->
